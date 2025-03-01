@@ -15,6 +15,9 @@ const app = express();
 // Middlewares de seguridad y manejo de solicitudes
 app.use(helmet());
 app.use(cors());
+// app.use(cors({
+//     origin: ['http://localhost:3000', 'https://tu-frontend.com']
+// })); // Configuración al trabajar con el frontend
 app.use(express.json()); // Para parsear JSON
 
 // Conexión a MongoDB Atlas
@@ -41,5 +44,3 @@ app.listen(PORT, () => {
 });
 
 module.exports = app; // Exporta la app para usos adicionales o pruebas
-
-// console.log(`Soy el jwt secret: ${require('crypto').randomBytes(64).toString('hex')}`)
